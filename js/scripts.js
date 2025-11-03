@@ -192,3 +192,110 @@
 
 })(jQuery);
 
+/* Theme toggle (Tailwind 'class' dark mode) */
+(function(){
+	// run after DOM loaded
+	function setupThemeToggle(){
+		var themeToggleBtn = document.getElementById('theme-toggle');
+		if(!themeToggleBtn) return; // no toggle on this page
+		var darkIcon = document.getElementById('theme-toggle-dark-icon');
+		var lightIcon = document.getElementById('theme-toggle-light-icon');
+
+		// initialize icons based on stored preference or OS preference
+		if (localStorage.getItem('color-theme') === 'dark' || (!localStorage.getItem('color-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+			document.documentElement.classList.add('dark');
+			if(lightIcon) lightIcon.classList.remove('hidden');
+		} else {
+			document.documentElement.classList.remove('dark');
+			if(darkIcon) darkIcon.classList.remove('hidden');
+		}
+
+		themeToggleBtn.addEventListener('click', function() {
+			// toggle icons
+			if(darkIcon) darkIcon.classList.toggle('hidden');
+			if(lightIcon) lightIcon.classList.toggle('hidden');
+
+			// toggle theme and persist
+			if (document.documentElement.classList.contains('dark')) {
+				document.documentElement.classList.remove('dark');
+				localStorage.setItem('color-theme', 'light');
+			} else {
+				document.documentElement.classList.add('dark');
+				localStorage.setItem('color-theme', 'dark');
+			}
+		});
+	}
+
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', setupThemeToggle);
+	} else {
+		setupThemeToggle();
+	}
+})();
+
+
+/* Contact Form */
+document.addEventListener('DOMContentLoaded', function() {
+	const contactForm = document.getElementById('contactForm');
+	
+	if (contactForm) {
+		contactForm.addEventListener('submit', function(e) {
+			e.preventDefault();
+			
+			// Obtener los datos del formulario
+			const formData = {
+				name: document.getElementById('cname').value,
+				email: document.getElementById('cemail').value,
+				subject: document.getElementById('csubject').value,
+				message: document.getElementById('cmessage').value
+			};
+			
+			// Elemento para mostrar mensajes
+			const formMessage = document.getElementById('formMessage');
+			
+			// Mostrar mensaje de envío
+			formMessage.textContent = 'Enviando mensaje...';
+			formMessage.className = 'text-center text-indigo-600';
+			formMessage.classList.remove('hidden');
+			
+			// Enviar datos al servidor usando fetch
+			fetch('https://tu-servidor.com/api/contacto', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(formData)
+			})
+			.then(response => {
+				if (!response.ok) {
+					throw new Error('Error en la respuesta del servidor');
+				}
+				return response.json();
+			})
+			.then(data => {
+				// Éxito
+				formMessage.textContent = '¡Mensaje enviado exitosamente! Te contactaremos pronto.';
+				formMessage.className = 'text-center text-green-600';
+				
+				// Limpiar el formulario
+				contactForm.reset();
+				
+				// Ocultar mensaje después de 5 segundos
+				setTimeout(() => {
+					formMessage.classList.add('hidden');
+				}, 5000);
+			})
+			.catch(error => {
+				// Error
+				console.error('Error:', error);
+				formMessage.textContent = 'Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.';
+				formMessage.className = 'text-center text-red-600';
+				
+				// Ocultar mensaje después de 5 segundos
+				setTimeout(() => {
+					formMessage.classList.add('hidden');
+				}, 5000);
+			});
+		});
+	}
+});
