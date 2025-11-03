@@ -33,7 +33,7 @@ Colors:
 body,
 p {
     color: #6b747b;
-    font: 400 1rem/1.625rem "Open Sans", sans-serif;
+    font: 400 1rem/1.625rem "Poppins", sans-serif;
 }
 
 h1 {
@@ -632,7 +632,7 @@ input[type="checkbox"] {
     color: #ffffff;
     opacity: 1;
     font-weight: 600;
-    font-family: "Open Sans";
+    font-family: "Poppins";
 }
 
 .lightbox-basic .btn-solid-reg.mfp-close:hover {
@@ -652,7 +652,7 @@ input[type="checkbox"] {
     background-color: transparent;
     color: #252c38;
     opacity: 1;
-    font-family: "Open Sans";
+    font-family: "Poppins";
 }
 
 .lightbox-basic .btn-outline-reg.mfp-close.as-button:hover {
