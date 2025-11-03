@@ -64,18 +64,11 @@
                         <li>
                             <a class="nav-link page-scroll" href="#pricing">Precios</a>
                         </li>
-                        <li class="dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Más</a>
-                            <div class="dropdown-menu" aria-labelledby="dropdown01">
-                                <a class="dropdown-item page-scroll" href="article.html">Detalles del artículo</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item page-scroll" href="terms.html">Términos y condiciones</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item page-scroll" href="privacy.html">Política de privacidad</a>
-                            </div>
-                        </li>
                         <li>
                             <a class="nav-link page-scroll" href="#download">Descargar</a>
+                        </li>
+                        <li>
+                            <a class="nav-link page-scroll" href="#contact">Contacto</a>
                         </li>
                     </ul>
                     <span class="block lg:ml-3.5">
@@ -209,8 +202,7 @@
                                 <div>Listo para usar con una configuración mínima</div>
                             </li>
                         </ul>
-                        <a class="btn-solid-reg popup-with-move-anim mr-1.5" href="#details-lightbox">Ver más</a>
-                        <a class="btn-outline-reg" href="article.html">Leer artículo</a>
+                        <a class="btn-solid-reg popup-with-move-anim" href="#details-lightbox">Ver más</a>
                     </div>
                 </div> <!-- end of col -->
             </div> <!-- end of container -->
@@ -541,8 +533,66 @@
         <!-- end of conclusion -->
 
 
+        <!-- Contact Form -->
+        <div id="contact" class="form-1">
+            <div class="container px-4 sm:px-8">
+                <h2 class="mb-12 text-center">Contáctanos</h2>
+                <div class="lg:grid lg:grid-cols-2 lg:gap-x-12">
+                    <div class="lg:mb-0 xl:mt-8">
+                        <h3 class="mb-6">¿Tienes preguntas sobre Momentum?</h3>
+                        <p class="mb-6">Estamos aquí para ayudarte a comenzar tu camino hacia una mayor productividad. Completa el formulario y nos pondremos en contacto contigo lo antes posible.</p>
+                        <ul class="list mb-6 space-y-2">
+                            <li class="flex">
+                                <i class="fas fa-chevron-right"></i>
+                                <div>Soporte técnico disponible</div>
+                            </li>
+                            <li class="flex">
+                                <i class="fas fa-chevron-right"></i>
+                                <div>Consultas sobre planes y precios</div>
+                            </li>
+                            <li class="flex">
+                                <i class="fas fa-chevron-right"></i>
+                                <div>Asesoría personalizada</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <!-- Contact Form -->
+                        <form id="contactForm">
+                            <div class="mb-4">
+                                <input type="text" class="form-control-input w-full" id="cname" name="name" placeholder="Nombre completo" required />
+                            </div>
+                            <div class="mb-4">
+                                <input type="email" class="form-control-input w-full" id="cemail" name="email" placeholder="Correo electrónico" required />
+                            </div>
+                            <div class="mb-4">
+                                <select class="form-control-select w-full" id="csubject" name="subject" required>
+                                    <option value="" disabled selected>Selecciona un asunto</option>
+                                    <option value="soporte-tecnico">Soporte técnico</option>
+                                    <option value="consultas-precios">Consultas sobre precios</option>
+                                    <option value="consultas-planes">Consultas sobre planes</option>
+                                    <option value="otros">Otros</option>
+                                </select>
+                            </div>
+                            <div class="mb-5">
+                                <textarea class="form-control-textarea w-full" id="cmessage" name="message" placeholder="Tu mensaje" rows="6" required></textarea>
+                            </div>
+                            <div class="mb-4">
+                                <button type="submit" class="form-control-submit-button w-full">Enviar mensaje</button>
+                            </div>
+                            <div id="formMessage" class="text-center hidden"></div>
+                        </form>
+                        <!-- end of contact form -->
+                    </div>
+                </div> <!-- end of grid -->
+            </div> <!-- end of container -->
+        </div> <!-- end of form-1 -->
+        <!-- end of contact form -->
+
+
         <!-- Footer -->
         <div class="footer">
+            
             <div class="container px-4 sm:px-8">
                 <h4 class="mb-8 lg:max-w-3xl lg:mx-auto">Momentum te acompaña para dejar la procrastinación. Contacta al equipo en <a class="text-indigo-600 hover:text-gray-500" href="mailto:email@domain.com">soporte@momemtum.com.ec</a></h4>
                 <div class="social-container">
@@ -584,12 +634,7 @@
 
         <!-- Copyright -->
         <div class="copyright">
-            <div class="container px-4 sm:px-8 lg:grid lg:grid-cols-3">
-                    <ul class="mb-4 list-unstyled p-small">
-                    <li class="mb-2"><a href="article.html">Detalles del artículo</a></li>
-                    <li class="mb-2"><a href="terms.html">Términos y condiciones</a></li>
-                    <li class="mb-2"><a href="privacy.html">Política de privacidad</a></li>
-                </ul>
+            <div class="container px-4 sm:px-8 lg:grid lg:grid-cols-2">
                 <p class="pb-2 p-small statement">Copyright © <a href="#your-link" class="no-underline">Momentum Team</a></p>
 
                 <p class="pb-2 p-small statement">Distributed by :<a href="https://themewagon.com/" class="no-underline">Themewagon</a></p>

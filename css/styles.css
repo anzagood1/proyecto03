@@ -1217,3 +1217,35 @@ a:hover.back-to-top {
     /* end of extra pages */
 }
 /* end of min-width 1200px */
+
+
+/**********************/
+/*     Contact Form   */
+/**********************/
+.form-1 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    background: #ffffff;
+}
+
+.form-1 h2 {
+    margin-bottom: 3rem;
+    color: #0f172a;
+}
+
+.form-1 h3 {
+    margin-bottom: 1.5rem;
+    color: #334155;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.form-1 .list {
+    margin-bottom: 2rem;
+}
+
+.form-1 .list i {
+    color: #6366f1;
+    margin-right: 0.5rem;
+}
+/* end of contact form */
